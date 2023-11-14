@@ -1,0 +1,10 @@
+@import "./null";
+@import "./fonts";
+@import "./variables";
+
+body{
+	font-family: 'Gilroy', 'sans-serif';
+	font-weight: 400;
+	font-size: 14px;
+	color:var(--black)
+}

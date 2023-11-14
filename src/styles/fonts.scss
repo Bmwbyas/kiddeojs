@@ -1,0 +1,6 @@
+@import './mixins.scss';
+
+@include font($family: 'Gilroy', $weight: 400, $url: '../assets/fonts/Gilroy-Regular.woff');
+@include font($family: 'Gilroy', $weight: 500, $url: '../assets/fonts/Gilroy-Medium.woff');
+@include font($family: 'Gilroy', $weight: 600, $url: '../assets/fonts/Gilroy-SemiBold.woff');
+@include font($family: 'Gilroy', $weight: 700, $url: '../assets/fonts/Gilroy-Bold.woff');

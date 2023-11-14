@@ -1,0 +1,109 @@
+@import "mixins";
+@import "./Title.module";
+
+.container {
+	position: relative;
+	margin-bottom: 25px;
+
+	.select {
+		min-height: 39px;
+		max-height: 39px;
+		white-space: nowrap; /* Запрещаем перенос строк */
+		overflow: hidden; /* Обрезаем все, что не помещается в область */
+		text-overflow: ellipsis; /* Добавляем многоточие */
+		@extend .b1;
+		border-radius: 5px;
+		padding: 10px 15px;
+		cursor: pointer;
+		border: 1px solid var(--grey);
+		background: var(--white);
+
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 10px;
+			top: 32%;
+			width: 6px;
+			height: 11px;
+			@include img();
+			background-image: url("../assets/img/icon/backArrow.svg");
+			transform: rotate(270deg);
+		}
+
+		&.active {
+			&::after {
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	.options__container {
+		position: absolute;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		padding: 0;
+		top: 39px;
+		left: 0;
+		right: 0;
+		border-radius: 5px;
+		background: var(--white);
+		max-height: 200px;
+		overflow: auto;
+
+		&::-webkit-scrollbar {
+			width: 11px;
+			background-color: transparent;
+		}
+
+		&::-webkit-scrollbar-thumb {
+
+			background-color: var(--grey);
+			border-radius: 100px;
+			border: 4px solid var(--white);
+		}
+
+		.input__label {
+			color: var(--black);
+			@extend .b1;
+			padding: 10px 15px;
+			cursor: pointer;
+			border-bottom: 1px solid var(--grey);
+			width: 100%;
+
+			&.input__label__checkbox {
+				position: relative;
+
+				& > input:checked {
+					background: #F2766A;
+				}
+
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			&:hover {
+				color: var(--coral);
+			}
+
+			input {
+				display: none;
+			}
+
+			.checked {
+				position: absolute;
+				z-index: 2;
+				right: 15px;
+				top: 35%;
+				width: 15px;
+				height: 11px;
+				@include img;
+				background-image: url("../assets/img/icon/confirm.svg");
+			}
+		}
+	}
+}

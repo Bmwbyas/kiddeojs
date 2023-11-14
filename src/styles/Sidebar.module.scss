@@ -1,0 +1,21 @@
+.container{
+	display: flex;
+	max-width: 360px;
+	width: 100%;
+	flex-direction: column;
+	padding: 35px 20px 46px 20px;
+	min-height: 100vh;
+	@media (min-width: 960px) {
+		padding: 47px 32px 27px 32px;
+
+	}
+	.title{
+		margin-bottom: 32px;
+	}
+	.submit{
+		height: 39px;
+		border-radius: 5px;
+		color: var(--white);
+		background: var(--coral);
+	}
+}

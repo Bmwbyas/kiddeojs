@@ -1,0 +1,14 @@
+@mixin font($family, $style: 'normal', $weight, $url) {
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    src: url($url);
+  }
+}
+@mixin img(){
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

@@ -1,0 +1,35 @@
+@import "Title.module";
+@import "mixins";
+.accordion{
+		.tab__title{
+			position: relative;
+			@extend .h2;
+			cursor: pointer;
+			margin-bottom: 20px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				right: 10px;
+				top: 32%;
+				width: 6px;
+				height: 11px;
+				@include img();
+				background-image: url("../assets/img/icon/backArrow.svg");
+				transform: rotate(270deg);
+			}
+
+			&.active {
+				&::after {
+					transform: rotate(90deg);
+				}
+			}
+		}
+		.tab__content{
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
+}
